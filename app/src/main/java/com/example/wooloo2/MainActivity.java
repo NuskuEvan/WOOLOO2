@@ -47,11 +47,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                String story = "";
-                story += "\n";
-                story += "\n";
-                story += "\n";
-
                 startActivity(WOOLOOGENERATION);
             }
         });
