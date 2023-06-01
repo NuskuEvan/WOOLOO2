@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".WOOLOOFANTASY">
+    tools:context=".WoolooFantasyDisplayActivity">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline5"
@@ -27,25 +27,29 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.25" />
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:scaleType="fitXY"
-        app:layout_constraintBottom_toTopOf="@+id/guideline10"
-        app:layout_constraintEnd_toStartOf="@+id/guideline9"
-        app:layout_constraintStart_toStartOf="@+id/guideline5"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/fantasy_story" />
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:textSize="9pt"
-        android:text="TextView"
+    <LinearLayout
+        android:layout_width="327dp"
+        android:layout_height="786dp"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline9"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/guideline5"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+        <ImageView
+            android:id="@+id/iv_main"
+            android:layout_width="match_parent"
+            android:layout_height="195dp"
+            android:scaleType="fitXY"
+            app:srcCompat="@drawable/fantasy_story" />
+
+        <TextView
+            android:id="@+id/story_fantasy"
+            android:layout_width="match_parent"
+            android:layout_height="590dp"
+            android:text="Story"
+            android:textSize="9pt" />
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

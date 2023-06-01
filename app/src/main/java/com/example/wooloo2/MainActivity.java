@@ -10,45 +10,64 @@ import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
 
-
-    private EditText Noun;
-    private EditText Adjective;
-    private EditText Adverb;
-    private EditText Name;
-    private EditText Alignment;
-    private EditText Verb;
-    private EditText Weapon;
-    private EditText Animal;
-    private EditText Number;
-    private EditText Choice;
-    private EditText Adjective2;
+    private EditText etNoun;
+    private EditText etAdjective;
+    private EditText etAdverb;
+    private EditText etName;
+    private EditText etAlignment;
+    private EditText etVerb;
+    private EditText etWeapon;
+    private EditText etAnimal;
+    private EditText etNumber;
+    private EditText etChoice;
+    private EditText etAdjective2;
     private Button Generate;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Noun = findViewById(R.id.es_first);
-        Adjective = findViewById(R.id.es_second);
-        Adverb = findViewById(R.id.es_third);
-        Name = findViewById(R.id.es_fourth);
-        Alignment = findViewById(R.id.es_fifth);
-        Verb = findViewById(R.id.es_sixth);
-        Weapon = findViewById(R.id.es_seventh);
-        Animal = findViewById(R.id.es_eighth);
-        Number = findViewById(R.id.es_ninth);
-        Choice = findViewById(R.id.es_tenth);
-        Adjective2 = findViewById(R.id.es_eleventh);
-        Generate = findViewById(R.id.button);
+            etNoun = findViewById(R.id.es_first);
+            etAdjective = findViewById(R.id.es_second);
+            etAdverb = findViewById(R.id.es_third);
+            etName = findViewById(R.id.es_fourth);
+            etAlignment = findViewById(R.id.es_fifth);
+            etVerb = findViewById(R.id.es_sixth);
+            etWeapon = findViewById(R.id.es_seventh);
+            etAnimal = findViewById(R.id.es_eighth);
+            etNumber = findViewById(R.id.es_ninth);
+            etChoice = findViewById(R.id.es_tenth);
+            etAdjective2 = findViewById(R.id.es_eleventh);
+            Generate = findViewById(R.id.button);
 
-        Intent WOOLOOGENERATION = new Intent(MainActivity.this, WOOLOOGENERATION.class);
+        Intent WOOLOOGENERATION = new Intent(MainActivity.this, WoolooStoryPickerActivity.class);
 
         Generate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
+                String storyFantasy = "";
+                storyFantasy +="Welcome to Drenkon " + etName + " , be careful not to upset the natives of this place as you will face consequences";
+                storyFantasy += "You walk through the " + etNoun + " carefully not wanting to draw any attention to you";
+                storyFantasy += "";
+
+                String storyApocalypse = "";
+
+                String storyMedieval = "";
+
+                String storyHell = "";
+
+                WOOLOOGENERATION.putExtra("fantasy",storyFantasy);
+                WOOLOOGENERATION.putExtra("apocalypse",storyApocalypse);
+                WOOLOOGENERATION.putExtra("medieval",storyMedieval);
+                WOOLOOGENERATION.putExtra("hell",storyHell);
+
                 startActivity(WOOLOOGENERATION);
             }
         });
+
+
     }
+
 }
